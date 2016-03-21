@@ -22,19 +22,28 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <artifactId>workshop-di-frameworks</artifactId>
+    <artifactId>workshop-di-frameworks-modules</artifactId>
     <groupId>org.rapidpm.workshop</groupId>
     <version>0.1.0-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>workshop-di-frameworks-modules</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-    <module>dagger1</module>
-    <module>boon-di</module>
-    <module>weld</module>
-  </modules>
+  <artifactId>workshop-di-frameworks-modules-boon-di</artifactId>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>io.fastjson</groupId>
+      <artifactId>boon</artifactId>
+      <version>0.33</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.enterprise</groupId>
+      <artifactId>cdi-api</artifactId>
+      <version>1.1</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
 
 
 </project>

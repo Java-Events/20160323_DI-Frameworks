@@ -18,9 +18,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <modules>
-    <module>modules</module>
-  </modules>
+
 
   <parent>
     <groupId>org.rapidpm</groupId>
@@ -35,7 +33,9 @@
 
   <packaging>pom</packaging>
 
-
+  <modules>
+    <module>modules</module>
+  </modules>
 
   <inceptionYear>2013</inceptionYear>
   <organization>
@@ -43,12 +43,12 @@
     <url>http://www.rapidpm.org</url>
   </organization>
   <url>https://github.com/RapidPM/proxybuilder</url>
-  <description>Examples for the ProxyBuilder Project</description>
+  <description>Workshop DI Frameworks</description>
 
   <scm>
-    <url>https://github.com/RapidPM/proxybuilder-examples</url>
-    <connection>scm:git:https://github.com/RapidPM/proxybuilder-examples.git</connection>
-    <developerConnection>scm:git:https://github.com/RapidPM/proxybuilder-examples.git</developerConnection>
+    <url>http://78.47.69.224/sven.ruppert/workshop_di-frameworks</url>
+    <connection>scm:git:http://78.47.69.224/sven.ruppert/workshop_di-frameworks.git</connection>
+    <developerConnection>scm:git:http://78.47.69.224/sven.ruppert/workshop_di-frameworks.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
   <developers>
@@ -63,12 +63,8 @@
   </developers>
   <issueManagement>
     <system>Github</system>
-    <url>https://github.com/RapidPM/proxybuilder-examples/issues</url>
+    <url>http://78.47.69.224/sven.ruppert/workshop_di-frameworks/issues</url>
   </issueManagement>
-  <ciManagement>
-    <system>TravisCI</system>
-    <url>https://travis-ci.org/RapidPM/proxybuilder-examples/</url>
-  </ciManagement>
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -78,4 +74,14 @@
     </license>
   </licenses>
 
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
