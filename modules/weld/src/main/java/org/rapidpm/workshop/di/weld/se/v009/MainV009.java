@@ -17,40 +17,33 @@
  * under the License.
  */
 
-package org.rapidpm.workshop.di.weld.se.v002;
+package org.rapidpm.workshop.di.weld.se.v009;
 
-import org.jboss.weld.environment.se.Weld;
-import org.jboss.weld.environment.se.WeldContainer;
+import java.util.stream.IntStream;
 
-import javax.enterprise.inject.Instance;
-import javax.inject.Inject;
+public class MainV009 {
 
-public class MainV002 {
 
   public static void main(String[] args) {
 
-    final Weld weld = new Weld();
-    try (WeldContainer container = weld.initialize()) {
-      final Instance<Service> serviceInstance = container.select(Service.class);
-      final String s = serviceInstance.get().doWork();
-      System.out.println("s = " + s);
+    final long count;
+    try (final IntStream range = IntStream.range(0, 100)) {
+      count = range
+          .parallel()
+          .map(operand -> 0)
+          .boxed()
+          .map(integer -> {
+            System.out.println("integer = " + integer);
+            return integer;
+          })
+          .count();
     }
+
+
+    System.out.println("count = " + count);
+
+
   }
 
-
-  public static class Service {
-
-    @Inject SubService subservice;
-
-    public String doWork() {
-      return subservice.doWork();
-    }
-  }
-
-  public static class SubService {
-    public String doWork() {
-      return "SubService";
-    }
-  }
 
 }
