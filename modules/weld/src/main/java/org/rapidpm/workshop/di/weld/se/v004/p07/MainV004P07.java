@@ -28,7 +28,7 @@ import org.rapidpm.workshop.di.weld.se.v004.p07.Service004P07;
 
 import static java.lang.System.out;
 
-public class MainV004 {
+public class MainV004P07 {
 
 	public static void main(String[] args) {
 		final String doWorkP01;

@@ -32,13 +32,13 @@ import java.lang.annotation.Target;
 
 import static java.lang.System.out;
 
-public class MainV006 {
+public class MainV006P07 {
 
   public static void main(String[] args) {
     try (final WeldContainer container = new Weld()
         .containerId("main")
         .disableDiscovery()
-        .packages(MainV006.class)
+        .packages(MainV006P07.class)
         .initialize()) {
 
       final Instance<Service> serviceInstance = container.select(Service.class);
